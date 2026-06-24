@@ -1,3 +1,4 @@
+from infraops.collectors.cpu import collect_cpu
 from infraops.reporters.terminal import TerminalReporter
 from infraops.utils.status import Status
 
@@ -12,10 +13,12 @@ def run_health(args):
         "InfraOps System Health Report"
     )
 
+    cpu = collect_cpu()
+
     reporter.print_status(
         "CPU",
-        Status.OK,
-        "Collector not implemented yet"
+        cpu.status,
+        cpu.details
     )
 
     reporter.print_status(
