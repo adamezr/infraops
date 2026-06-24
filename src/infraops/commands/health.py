@@ -1,9 +1,9 @@
 from infraops.collectors.cpu import collect_cpu
 from infraops.collectors.filesystem import collect_filesystems
+from infraops.collectors.logs import collect_logs
 from infraops.collectors.memory import collect_memory
 from infraops.collectors.processes import collect_processes
 from infraops.reporters.terminal import TerminalReporter
-from infraops.utils.status import Status
 
 
 def run_health(args):
@@ -20,6 +20,7 @@ def run_health(args):
     memory = collect_memory()
     filesystem = collect_filesystems()
     processes = collect_processes()
+    logs = collect_logs()
 
     reporter.print_status(
         "CPU",
@@ -47,8 +48,8 @@ def run_health(args):
 
     reporter.print_status(
         "Logs",
-        Status.OK,
-        "Collector not implemented yet"
+        logs.status,
+        logs.details
     )
 
     reporter.print_footer()
