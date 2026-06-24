@@ -1,5 +1,9 @@
 # InfraOps
 
+Target Platform:
+
+InfraOps is primarily developed for Linux environments. While some functionality may work on macOS or other Unix-like operating systems, the project is designed, tested, and optimized for Linux systems.
+
 I have spent a good portion of my career supporting Linux systems and one thing I've learned is that many outages are caused by surprisingly simple problems.
 
 A filesystem fills up.
