@@ -1,0 +1,2 @@
+[console_scripts]
+infraops = infraops.main:main
